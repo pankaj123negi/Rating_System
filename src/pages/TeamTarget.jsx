@@ -330,12 +330,14 @@ const TeamTarget = () => {
           >
          Submit & Create Goal
           </button>
+
+          <Link to='/dashboard'>
           <button
             className="min-w-[120px] border text-base py-1 px-2 rounded-full border-gradient text-white font-medium hover:bg-indigo-700 transition-colors"
             
           >
            Save
-          </button>
+          </button></Link>
          
         </div>
         </div >

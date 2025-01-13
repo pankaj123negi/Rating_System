@@ -243,14 +243,16 @@ const BussinessResults = () => {
                 </tbody>
               </table>
 
+              
               <div className="m-4 flex flex-row-reverse gap-4">
+         <Link to='/dashboard'>
           <button
             className="min-w-[120px] border text-lg rounded-full"
           
             
           >
            Cancel
-          </button>
+          </button></Link>
           <button
             className="min-w-[120px] border text-lg  rounded-full border-gradient text-white font-medium hover:bg-indigo-700 transition-colors"
             

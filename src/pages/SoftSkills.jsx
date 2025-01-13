@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { DndProvider, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { Tooltip } from "react-tooltip";
@@ -462,8 +463,14 @@ const SoftSkills = () => {
     }
   };
   
+  const navigate = useNavigate();
+
   const handleBack = () => {
-    if (currentStep > 1) {
+    if (currentStep === 1) {
+      // Redirect to the dashboard
+      navigate('/dashboard'); // Replace '/dashboard' with the actual dashboard route
+    }
+    else {
       setCurrentStep((prev) => prev - 1);
       setComplete(false);
       setSearchTerm("");
@@ -627,10 +634,11 @@ const SoftSkills = () => {
   >
     {currentStep === steps.length ? 'Submit' : 'Save & Next'}
   </button>
+  
   <button
     className="min-w-[120px] text-base rounded-full bg-indigo-600 text-white font-medium hover:bg-indigo-700 transition-colors"
     onClick={handleBack}
-    disabled={currentStep === 1}
+    // disabled={currentStep === 1}
   >
     Back
   </button>
