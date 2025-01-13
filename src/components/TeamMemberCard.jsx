@@ -17,7 +17,7 @@ const TeamMemberCard = ({ name, comment, project, isDropped = false }) => {
       ref={drag}
       data-tooltip-id={isDropped ? `tooltip-${name}` : undefined}
       className={`
-        px-4 py-2
+        px-2 py-2
         bg-green-100 
         rounded-md 
         cursor-pointer 

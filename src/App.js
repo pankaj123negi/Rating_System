@@ -12,7 +12,9 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/bussiness" element={<BussinessResults />} />
         <Route path="/soft_skills" element={<SoftSkills />} />
+        
         <Route path="/team_target" element={<TeamTarget />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

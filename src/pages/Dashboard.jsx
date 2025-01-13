@@ -80,7 +80,7 @@ const Dashboard = () => {
                         </div>
                         <div className="py-4">
                             <div className="overflow-x-auto">
-                                <table className="w-full max-w-[768px]">
+                                <table className="w-full ">
                                     <thead>
                                         <tr className="text-left border-b border-[#E0E4E9] py-3 px-4">
                                             <th className="text-[#96A5B8] text-lg py-3 px-4">#</th>

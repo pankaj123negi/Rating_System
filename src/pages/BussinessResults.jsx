@@ -4,6 +4,7 @@ import { DndProvider, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { ReactComponent as Home } from "../assets/home_icon.svg";
 import { Tooltip } from "react-tooltip";
+import { Link } from 'react-router-dom'
 import Navbar from "../components/Navbar";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import TeamMemberCard from "../components/TeamMemberCard";
@@ -117,22 +118,24 @@ const BussinessResults = () => {
     <>
       <Navbar />
       <DndProvider backend={HTML5Backend}>
-        <div className="main-container p-4 sm:p-8 space-y-8">
-          <div className="heading flex px-4 items-center flex-wrap space-x-4">
-            <Home size={40} />
-            <div>
-              <p className="text-xl font-bold mb-2 text-[#05004E]">
-                Rating System – Team member
-              </p>
-              <p className="text-sm sm:text-base text-gray-500 mt-2">
-                Business result for the quarter Apr 2025 – Jun 2026
-              </p>
-            </div>
-          </div>
-
+   
+        <div className="heading py-8 px-12 flex items-center flex-wrap space-x-4">
+  <Link to='/dashboard'>
+  <Home size={40} /></Link>
+  {/* Add a vertical line separator */}
+  <div className="w-0.5 h-10 bg-gray-300"></div>
+  <div className="space-y-2">
+    <p className="text-xl font-bold text-[#05004E]">
+      Rating System – Team member
+    </p>
+    <p className="text-sm sm:text-base text-gray-500">
+      Business result for the quarter Apr 2025 – Jun 2026
+    </p>
+  </div>
+</div>
           <div className="flex flex-wrap lg:flex-nowrap">
-            <div className="flex-grow mr-8 overflow-x-auto rounded-lg">
-              <table className="table-auto w-full border-collapse border">
+            <div className="flex-grow pl-8 mr-8 overflow-x-auto ">
+              <table className="table-auto w-full border-collapse border ">
                 <thead>
                   <tr>
                     <th className="border p-4 text-white" style={gradientStyle}>
@@ -240,22 +243,33 @@ const BussinessResults = () => {
                 </tbody>
               </table>
 
-              <div className="button-group flex justify-end w-full space-x-4 mt-4">
-                <button className="px-4 py-2 bg-gray-200 text-gray-700 font-semibold rounded-md hover:bg-gray-300">
-                  Cancel
-                </button>
-                <button className="px-4 py-2 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600">
-                  Save
-                </button>
-                <button className="px-4 py-2 bg-green-500 text-white font-semibold rounded-md hover:bg-green-600">
-                  Submit
-                </button>
-              </div>
+              <div className="m-4 flex flex-row-reverse gap-4">
+          <button
+            className="min-w-[120px] border text-lg rounded-full"
+          
+            
+          >
+           Cancel
+          </button>
+          <button
+            className="min-w-[120px] border text-lg  rounded-full border-gradient text-white font-medium hover:bg-indigo-700 transition-colors"
+            
+          >
+            Save
+          </button>
+          <button
+            className="min-w-[120px] border text-lg  rounded-full"
+          
+            
+          >
+           Submit
+          </button>
+        </div>
             </div>
 
-            <div className="team_card w-full lg:w-64 max-w-full bg-gray-100 p-4 rounded-md overflow-y-auto max-h-[500px]">
-              <h3 className="text-lg font-semibold mb-4">Team Members</h3>
-              <div className="flex flex-wrap gap-2">
+            <div className="mx-6 team_card w-full lg:w-64 max-w-full bg-gray-100 p-4 rounded-md overflow-y-auto max-h-[500px]">
+              <h3 className="text-lg font-semibold mb-4 text-center">Team Members</h3>
+              <div className="flex pl-2 flex-wrap gap-2">
                 {teamMembers.map(({ name, comment, project }) => (
                   <TeamMemberCard 
                     key={name} 
@@ -267,7 +281,7 @@ const BussinessResults = () => {
               </div>
             </div>
           </div>
-        </div>
+        
       </DndProvider>
     </>
   );
